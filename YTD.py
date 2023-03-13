@@ -9,6 +9,9 @@ app = ctk.CTk()
 app.geometry("720x480")
 app.title("YTD")
 
+def selector_menu_callback(choice):
+selector_menu = ctk.CTkOptionMenu(app, values = ["MP4", "MP3"], command = selector_menu_callback)
+
 def Video_download():
     try:
         ytLink = link.get()
