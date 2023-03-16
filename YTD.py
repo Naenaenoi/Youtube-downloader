@@ -9,15 +9,15 @@ app = ctk.CTk()
 app.geometry("600x300")
 app.title("YTD")
 
-options_var = ctk.StringVar(value = "MP4")
+options_var = ctk.StringVar(value = "Video")
 
 def options_callback(choice):
-    if choice == 'MP4':
-        Video_download()
-    elif choice == 'MP3':
-        Audio_download()
+    if choice == 'Video':
+        Video()
+    elif choice == 'Audio':
+        Audio()
 
-options = ctk.CTkOptionMenu(app, values = ["MP4", "MP3"], command = options_callback, variable = options_var)
+options = ctk.CTkOptionMenu(app, values = ["Video", "Audio"], command = options_callback, variable = options_var)
 options.pack(padx = 20, pady = 10)
 
 
