@@ -14,3 +14,4 @@ Important notes:
 
 Your videos and audio files will be downloaded in their respective folders in 
 THIS file. Not your normal video/audio/download folders (idk how to make python do that yet)
+the .pyw file just removes the black terminal box behind the program on Windows (.pyw is windows specific and might mess up on other operating systems)
