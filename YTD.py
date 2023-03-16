@@ -13,9 +13,11 @@ options_var = ctk.StringVar(value = "Video")
 
 def options_callback(choice):
     if choice == 'Video':
-        Video()
+        download.configure(command = Video_download)
+        download.update()
     elif choice == 'Audio':
-        Audio()
+        download.configure(command = Audio_download)
+        download.update()
 
 options = ctk.CTkOptionMenu(app, values = ["Video", "Audio"], command = options_callback, variable = options_var)
 options.pack(padx = 20, pady = 10)
@@ -45,7 +47,7 @@ def Audio_download():
     except:
         finishLabel.configure(text="INVALID LINK YOU FUCK!!!!!")
 
-def on_progress(stream, bytes_remaining):
+def on_progress(stream, chunk, bytes_remaining):
     total_size = stream.filesize
     bytes_downloaded = total_size - bytes_remaining
     percentage_of_completion = bytes_downloaded / total_size * 100
@@ -73,7 +75,7 @@ progressBar = ctk.CTkProgressBar(app, width=400)
 progressBar.set(0)
 progressBar.pack(padx=10, pady=10)
 
-download = ctk.CTkButton(app, text="Download", command= Video_download)
+download = ctk.CTkButton(app, text="Download", command = Video_download)
 download.pack(padx=10, pady=10)
 
 app.mainloop()
