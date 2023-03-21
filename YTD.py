@@ -20,7 +20,7 @@ def options_callback(choice):
         download.update()
 
 options = ctk.CTkOptionMenu(app, values = ["Video", "Audio"], command = options_callback, variable = options_var)
-options.pack(padx = 20, pady = 10)
+options.place(x=450, y=10)
 
 
 def Video_download():
@@ -59,7 +59,7 @@ def on_progress(stream, chunk, bytes_remaining):
 
 
 title = ctk.CTkLabel(app, text = "Input link")
-title.pack(padx=10, pady=10)
+title.pack(padx=10, pady=40)
 
 url_var = tkinter.StringVar()
 link = ctk.CTkEntry(app, width=350, height=40, textvariable = url_var)
